@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-zinc-50 text-slate-900 transition-colors duration-300;
+  }
+  
+  body.dark {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-900 rounded-full hover:bg-slate-300 dark:hover:bg-slate-800 transition-colors;
+}
+
+/* Glassmorphic panels */
+.glass {
+  @apply backdrop-blur-md bg-white/75 dark:bg-slate-950/75 border border-slate-200/50 dark:border-slate-800/50 shadow-md;
+}
+
+.glass-card {
+  @apply backdrop-blur-md bg-white/60 dark:bg-slate-900/40 border border-slate-200/40 dark:border-slate-800/40 shadow-sm hover:shadow-md transition-all duration-300;
+}
+
+.glass-input {
+  @apply bg-white/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none rounded-xl px-4 py-2.5 transition-all duration-200 text-sm;
+}
